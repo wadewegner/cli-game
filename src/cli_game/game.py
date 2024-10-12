@@ -86,8 +86,3 @@ def main(stdscr):
         elif key == curses.KEY_RIGHT and x > 0:
             puzzle[y][x], puzzle[y][x-1] = puzzle[y][x-1], puzzle[y][x]
 
-def run_game():
-    curses.wrapper(main)
-
-if __name__ == "__main__":
-    run_game()

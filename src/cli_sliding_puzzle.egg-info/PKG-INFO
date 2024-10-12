@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: cli-sliding-puzzle
+Version: 0.1.2.post0+g854ffc5.d20241012
+Summary: A CLI sliding puzzle game
+Author-email: Wade Wegner <wade.wegner@gmail.com>
+License: MIT
+Keywords: game,puzzle,cli
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: windows-curses; platform_system == "Windows"
+
 # CLI Sliding Puzzle Game
 
 A command-line interface sliding puzzle game built with Python.
@@ -35,21 +49,21 @@ Use arrow keys to move tiles. Press 'q' to quit.
 
 1. Ensure all changes are committed to git.
 
-2. List existing tags to determine the next version number:
-   git tag --list
+2. Create a new git tag for the version:
+   git tag -a v0.1.2 -m "Release version 0.1.2"
+   git push origin v0.1.2
 
-3. Create a new git tag for the version:
-   git tag -a vX.X.X -m "Release version X.X.X"
-   git push origin vX.X.X
-
-4. Build the package:
+3. Build the package:
    python -m build
 
-5. Test the package locally:
-   pip install dist/cli_sliding_puzzle-X.X.X-py3-none-any.whl
+4. Test the package locally:
+   pip install dist/cli_sliding_puzzle-0.1.2-py3-none-any.whl
 
-6. Upload to TestPyPI:
+5. Upload to TestPyPI:
    twine upload --repository testpypi dist/*
+
+6. Test installation from TestPyPI:
+   pip install --index-url https://test.pypi.org/simple/ --no-deps cli-sliding-puzzle
 
 7. If everything works, upload to PyPI:
    twine upload dist/*

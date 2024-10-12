@@ -21,3 +21,7 @@ coverage.xml
 
 venv
 .pypirc
+dist/
+build/
+src/cli_sliding_puzzle.egg-info/
+src/cli_game/_version.py

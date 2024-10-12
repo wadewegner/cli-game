@@ -6,30 +6,40 @@ A command-line interface sliding puzzle game built with Python.
 
 To install the game, you need Python 3.7 or higher and pip. Then run:
 
+```bash
 pip install cli-sliding-puzzle
+```
 
 ## Playing the Game
 
 After installation, run the game by typing:
 
+```bash
 sliding-puzzle
+```
 
-Use arrow keys to move tiles. Press 'q' to quit.
+Use arrow keys to move tiles. Press `q` to quit.
 
 ## Development
 
 ### Setup
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/cli-sliding-puzzle.git
-   cd cli-sliding-puzzle
+   ```bash
+   git clone https://github.com/wadewegner/sliding-puzzle-game.git
+   cd sliding-puzzle-game
+   ```
 
 2. Create a virtual environment:
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-
+   ```
 3. Install development dependencies:
+
+   ```bash
    pip install build twine setuptools_scm
+   ```
 
 ### Building and Publishing
 

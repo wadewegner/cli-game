@@ -86,3 +86,6 @@ def main(stdscr):
         elif key == curses.KEY_RIGHT and x > 0:
             puzzle[y][x], puzzle[y][x-1] = puzzle[y][x-1], puzzle[y][x]
 
+# Make sure main is defined at the module level
+if __name__ == "__main__":
+    curses.wrapper(main)

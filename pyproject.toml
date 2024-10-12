@@ -26,4 +26,4 @@ sliding-puzzle = "cli_game:run_game"
 [tool.setuptools_scm]
 write_to = "src/cli_game/_version.py"
 version_scheme = "post-release"
-local_scheme = "node-and-date"
+local_scheme = "no-local-version"

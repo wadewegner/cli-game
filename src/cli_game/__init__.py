@@ -1,4 +1,4 @@
-from .game import main as run_game
+from .game import main
 from ._version import __version__
 
 def run_game():

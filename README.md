@@ -36,23 +36,60 @@ Use arrow keys to move tiles. Press 'q' to quit.
 1. Ensure all changes are committed to git.
 
 2. List existing tags to determine the next version number:
+   ```bash
    git tag --list
+   ```
 
 3. Create a new git tag for the version:
+   ```bash
    git tag -a vX.X.X -m "Release version X.X.X"
    git push origin vX.X.X
+   ```
 
-4. Build the package:
+4. Clean up the dist directory:
+   ```bash
+   rm -rf dist/*
+   ```
+
+5. Build the package:
+   ```bash
    python -m build
+   ```
 
-5. Test the package locally:
+6. Test the package locally:
+   ```bash
+   # List the contents of the dist directory
+   ls dist/
+   
+   # Install the latest version (replace X.X.X with the latest version number you see)
    pip install dist/cli_sliding_puzzle-X.X.X-py3-none-any.whl
+   ```
 
-6. Upload to TestPyPI:
+7. Upload to TestPyPI:
+   ```bash
    twine upload --repository testpypi dist/*
+   ```
 
-7. If everything works, upload to PyPI:
+8. Test the TestPyPI upload:
+   ```bash
+   # Create a new virtual environment for testing
+   python -m venv test_venv
+   source test_venv/bin/activate  # On Windows, use `test_venv\Scripts\activate`
+
+   # Install the package from TestPyPI
+   pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple cli-sliding-puzzle
+
+   # Test the installed package
+   sliding-puzzle
+
+   # Deactivate the test environment when done
+   deactivate
+   ```
+
+9. If everything works, upload to PyPI:
+   ```bash
    twine upload dist/*
+   ```
 
 ## License
 
